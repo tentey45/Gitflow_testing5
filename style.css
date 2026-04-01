@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
 
 * {
   margin: 0;
@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background: #f4f6f9;
   min-height: 100vh;
   display: flex;
@@ -54,7 +54,7 @@ input[type="password"] {
   padding: 10px 14px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 14px;
   color: #1a1a1a;
   outline: none;
@@ -91,7 +91,7 @@ input::placeholder {
   color: #fff;
   border: none;
   border-radius: 8px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -163,6 +163,7 @@ input::placeholder {
 /* About Section */
 body {
   flex-direction: column;
+  padding-top: 56px;
 }
 
 .about {
