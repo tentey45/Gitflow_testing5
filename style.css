@@ -163,6 +163,7 @@ input::placeholder {
 /* About Section */
 body {
   flex-direction: column;
+  padding-top: 56px;
 }
 
 .about {
