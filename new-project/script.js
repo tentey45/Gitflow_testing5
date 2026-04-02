@@ -62,7 +62,15 @@ function compute() {
             computation = prev * current;
             break;
         case '/':
-            // BUG 1: Still not fixed yet in Step 5
+            // FIXED BUG 1: Division by zero handled
+            if (current === 0) {
+                alert("Cannot divide by zero!");
+                currentOperand = '0';
+                previousOperand = '';
+                operation = undefined;
+                updateDisplay();
+                return;
+            }
             computation = prev / current;
             break;
         default:
@@ -76,7 +84,7 @@ function compute() {
 }
 
 function updateDisplay() {
-    // RESTORED Premium Display since Decimal bug is fixed
+    // Premium Display
     currentOperandTextElement.innerText = formatNumber(currentOperand);
     if (operation != null) {
         previousOperandTextElement.innerText = `${formatNumber(previousOperand)} ${operation}`;
