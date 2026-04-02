@@ -23,6 +23,9 @@ function deleteLast() {
 }
 
 function appendNumber(number) {
+    // FIXED BUG 2: Prevents multiple decimals
+    if (number === '.' && currentOperand.includes('.')) return;
+    
     if (currentOperand === '0' && number !== '.') {
         currentOperand = number.toString();
     } else {
@@ -43,11 +46,38 @@ function chooseOperator(op) {
 }
 
 function compute() {
-    // Logic to be implemented by team members
+    let computation;
+    const prev = parseFloat(previousOperand);
+    const current = parseFloat(currentOperand);
+    if (isNaN(prev) || isNaN(current)) return;
+    
+    switch (operation) {
+        case '+':
+            computation = prev + current;
+            break;
+        case '-':
+            computation = prev - current;
+            break;
+        case '*':
+            computation = prev * current;
+            break;
+        case '/':
+            // BUG 1: Still not fixed yet in Step 5
+            computation = prev / current;
+            break;
+        default:
+            return;
+    }
+    
+    currentOperand = computation.toString();
+    operation = undefined;
+    previousOperand = '';
+    updateDisplay();
 }
 
 function updateDisplay() {
-    currentOperandTextElement.innerText = currentOperand;
+    // RESTORED Premium Display since Decimal bug is fixed
+    currentOperandTextElement.innerText = formatNumber(currentOperand);
     if (operation != null) {
         previousOperandTextElement.innerText = `${formatNumber(previousOperand)} ${operation}`;
     } else {
