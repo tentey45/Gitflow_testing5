@@ -23,6 +23,9 @@ function deleteLast() {
 }
 
 function appendNumber(number) {
+    // FIXED BUG 2: Prevents multiple decimals
+    if (number === '.' && currentOperand.includes('.')) return;
+    
     if (currentOperand === '0' && number !== '.') {
         currentOperand = number.toString();
     } else {
@@ -59,7 +62,7 @@ function compute() {
             computation = prev * current;
             break;
         case '/':
-            // BUG 1: Division by zero is not handled
+            // BUG 1: Still not fixed yet in Step 5
             computation = prev / current;
             break;
         default:
@@ -73,7 +76,8 @@ function compute() {
 }
 
 function updateDisplay() {
-    currentOperandTextElement.innerText = currentOperand;
+    // RESTORED Premium Display since Decimal bug is fixed
+    currentOperandTextElement.innerText = formatNumber(currentOperand);
     if (operation != null) {
         previousOperandTextElement.innerText = `${formatNumber(previousOperand)} ${operation}`;
     } else {
