@@ -1,43 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login Page</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="login-container">
-    <div class="login-box">
-      <h1>Welcome Back</h1>
-      <p>Please login to your account</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login1</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-brand">My Website</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
 
-      <form>
-        <div class="input-group">
+    <div class="card">
+      <h1>Sign up</h1>
+      <p>Welcome back! Please enter your details.</p>
+
+      <form action="#" method="POST">
+        <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Enter your email" required />
+          <input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="you@example.com"
+          />
         </div>
 
-        <div class="input-group">
+        <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Enter your password" required />
+          <input
+            id="password"
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+          />
+          <a class="forgot" href="#">Forgot password?</a>
         </div>
 
-        <div class="options">
-          <label class="remember">
-            <input type="checkbox" />
-            Remember me
-          </label>
-          <a href="#">Forgot Password?</a>
-        </div>
-
-        <button type="submit">Login</button>
+        <button type="submit" class="btn">Sign In</button>
       </form>
 
-      <div class="signup-text">
-        Don’t have an account? <a href="#">Sign up</a>
-      </div>
+      <p class="signup">Don't have an account? <a href="#">Sign up</a></p>
     </div>
-  </div>
-</body>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <h2>About This Website</h2>
+      <p>
+        This is a basic login page built with HTML and CSS only. It allows
+        users to sign in to their account using their email and password. The
+        page includes a navigation bar, a login form with a forgot password
+        link, and a sign up option for new users. This feature adds the nav bar.
+      </p>
+    </section>
+  </body>
 </html>
