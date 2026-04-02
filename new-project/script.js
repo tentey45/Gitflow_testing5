@@ -58,6 +58,10 @@ function compute() {
         case '*':
             computation = prev * current;
             break;
+        case '/':
+            // BUG 1: Division by zero is not handled
+            computation = prev / current;
+            break;
         default:
             return;
     }
